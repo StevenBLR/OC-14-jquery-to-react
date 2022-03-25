@@ -12,7 +12,6 @@ function App() {
           <Route path="/employees" element={<Employees />}></Route>
         </Routes>
       </BrowserRouter>
-      ,
     </div>
   );
 }
