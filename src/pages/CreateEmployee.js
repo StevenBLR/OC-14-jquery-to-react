@@ -3,22 +3,19 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { departments } from "../data/departments";
 import { states } from "../data/states";
-
+import "../pico.min.css";
 function CreateEmployee() {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <h1>HRnet</h1>
-      <Link to="/employees">View Current Employees</Link>
-      <h2>Create Employee</h2>
+    <>
+      <div style={{ textAlign: "center", marginTop: "25px" }}>
+        <h1>HRnet</h1>
+        <Link to="/employees">View Current Employees</Link>
+        <h2>Create Employee</h2>
+      </div>
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="new-employee"
@@ -61,7 +58,7 @@ function CreateEmployee() {
 
         <input type="submit" />
       </form>
-    </div>
+    </>
   );
 }
 

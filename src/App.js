@@ -5,7 +5,7 @@ import Employees from "./pages/Employees";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" style={{ backgroundColor: "#11191f" }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CreateEmployee />}></Route>
