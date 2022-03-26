@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { departments } from "../data/departments";
 import { states } from "../data/states";
 import "../pico.min.css";
+
 function CreateEmployee() {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    // X - Add new employee in JSON
+  };
 
   return (
     <>
@@ -55,7 +59,6 @@ function CreateEmployee() {
             ))}
           </select>
         </div>
-
         <input type="submit" />
       </form>
     </>

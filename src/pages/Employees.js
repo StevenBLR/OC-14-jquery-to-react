@@ -1,7 +1,8 @@
 import React from "react";
+import EmployeesTable from "../components/EmployeesTable";
 
 function Employees() {
-  return <div>Employees</div>;
+  return <EmployeesTable />;
 }
 
 export default Employees;
