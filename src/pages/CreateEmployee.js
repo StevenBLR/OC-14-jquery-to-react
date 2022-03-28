@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { setLocalData, getLocalData } from "../components/utils/localStorage";
 import { departments } from "../data/departments";
 import { states } from "../data/states";
 import "../pico.min.css";
@@ -9,7 +10,8 @@ function CreateEmployee() {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    // X - Add new employee in JSON
+    // X - Add new employee in local storage
+    setLocalData("employees", [...getLocalData("employees"), data]);
   };
 
   return (
@@ -41,8 +43,10 @@ function CreateEmployee() {
           <input {...register("city")} />
           <label>State</label>
           <select {...register("state")}>
-            {states.map((s) => (
-              <option value={s.name}>{s.name}</option>
+            {states.map((s, i) => (
+              <option value={s.name} key={`state_${i}`}>
+                {s.name}
+              </option>
             ))}
           </select>
           <label>Zip Code</label>
@@ -54,8 +58,10 @@ function CreateEmployee() {
           />
           <label>Department</label>
           <select {...register("department")}>
-            {departments.map((d) => (
-              <option value={d}>{d}</option>
+            {departments.map((d, i) => (
+              <option value={d} key={`dptm_${i}`}>
+                {d}
+              </option>
             ))}
           </select>
         </div>
