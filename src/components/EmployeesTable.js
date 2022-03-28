@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { getLocalData } from "./utils/localStorage";
 
@@ -50,8 +50,37 @@ const columns = [
   },
 ];
 
+//  Internally, customStyles will deep merges your customStyles with the default styling.
+const customStyles = {
+  rows: {
+    style: {
+      minHeight: "72px", // override the row height
+    },
+  },
+  headCells: {
+    style: {
+      paddingLeft: "8px", // override the cell padding for head cells
+      paddingRight: "8px",
+    },
+  },
+  cells: {
+    style: {
+      paddingLeft: "8px", // override the cell padding for data cells
+      paddingRight: "8px",
+    },
+  },
+};
+
 function EmployeesTable() {
-  return <DataTable columns={columns} data={getLocalData("employees")} />;
+  return (
+    <DataTable
+      columns={columns}
+      data={getLocalData("employees")}
+      customStyles={customStyles}
+      theme="dark"
+      pagination
+    />
+  );
 }
 
 export default EmployeesTable;
