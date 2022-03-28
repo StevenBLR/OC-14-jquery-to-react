@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { setLocalData, getLocalData } from "../components/utils/localStorage";
+import { setLocalData, getLocalData } from "../utils/localStorage";
 import { departments } from "../data/departments";
 import { states } from "../data/states";
 import "../pico.min.css";
+import Modal from "../components/Modal";
 
 function CreateEmployee() {
   const { register, handleSubmit } = useForm();
+  const [showModal, setShowModal] = useState(false);
   const onSubmit = (data) => {
     console.log(data);
     // X - Add new employee in local storage
     setLocalData("employees", [...getLocalData("employees"), data]);
+    setShowModal(true);
   };
 
   return (
     <>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)} show={true}>
+          <p>Employee Created!</p>
+        </Modal>
+      )}
       <div style={{ textAlign: "center", marginTop: "25px" }}>
         <h1>HRnet</h1>
         <Link to="/employees">View Current Employees</Link>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
-import { getLocalData } from "./utils/localStorage";
+import { getLocalData } from "../utils/localStorage";
 
 const columns = [
   {
