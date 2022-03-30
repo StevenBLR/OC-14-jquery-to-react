@@ -84,7 +84,9 @@ export default CreateEmployee;
 const formStyle = {
   display: "flex",
   flexDirection: "column",
-  margin: "50px",
+  margin: "auto",
+  padding: "25px",
+  maxWidth: "800px",
 };
 
 const adressSectionStyle = {
