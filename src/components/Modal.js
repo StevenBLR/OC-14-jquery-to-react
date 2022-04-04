@@ -17,6 +17,8 @@ function Modal({ children, show, onClose }) {
 
 export default Modal;
 
+
+
 const ModalStyled = styled.div`
   display: flex;
   flex-direction: column;

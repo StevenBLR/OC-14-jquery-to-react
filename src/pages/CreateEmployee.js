@@ -6,6 +6,7 @@ import { departments } from "../data/departments";
 import { states } from "../data/states";
 import "../pico.min.css";
 import Modal from "../components/Modal";
+//import Modal from "sblr-custom-modal";
 
 function CreateEmployee() {
   const { register, handleSubmit } = useForm();
